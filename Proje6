@@ -1,0 +1,65 @@
+using System;
+namespace hazir_metotlar
+{
+    class Program
+    {
+        static void Main(string[]args)
+        {
+            string degisken = "Dersimiz CSharp, Hoşgeldiniz!";
+            string degisken2= "CSharp";
+            //Lenght (Boşluk dahil toplam karakter sayısı)
+            Console.WriteLine(degisken.Length);
+
+            //ToUpper , ToLower (Komple büyük ve küçük yazma)
+            Console.WriteLine(degisken.ToUpper());
+            Console.WriteLine(degisken.ToLower());
+
+            //Concat (parametreleri birleştirme)
+            Console.WriteLine(string.Concat(degisken," Merhaba"));
+
+            //CompareTo (Karakter sayılarında 1. değişken 2.değişkene eşit olursa=0 ,    1. 2.'den büyük olursa= 1,     1. 2.'den küçük ise = -1 döndürür.)
+            Console.WriteLine(degisken.CompareTo(degisken2));
+
+            //Compare (True: Büyük-küçük harf duyarsız, False: Büyük-küçük harf duyarlıdır.)
+            Console.WriteLine(string.Compare(degisken,degisken2,true));
+            Console.WriteLine(string.Compare(degisken,degisken2,false));
+
+            //Contains (1.'nin içerisinde 2. var mı? )
+            Console.WriteLine(degisken.Contains(degisken2));
+            Console.WriteLine(degisken.EndsWith("Hoşgeldiniz!"));
+            Console.WriteLine(degisken.StartsWith("Merhaba"));
+
+            //IndexOf (Aranan parametrenin kaçıncı karakterde başladığını bulur. Bir şey bulamazsa '-1' döndürür.)
+            Console.WriteLine(degisken.IndexOf("CS"));
+            
+            //LastIndexOf (Girilen parametrenin son kullanıldığı yerin indexini bulur)
+            Console.WriteLine(degisken.LastIndexOf("i"));
+
+            //Insert (Girilen index sayısından itibaren yeni parametreyi ekler.)
+            Console.WriteLine(degisken.Insert(0,"Merhaba! "));
+
+            //PadLeft, PadRight (Uyguladığımız değişkenin, tercihimize göre, sağına veya soluna, değişkenin kendi karakter sayısı da sayılmak üzere, girdiğimiz sayıya kadar boşlukla veya istediğimiz karakterle tamamlama işlemlerini yapar.)
+            Console.WriteLine(degisken+degisken2.PadLeft(30)); 
+            Console.WriteLine(degisken+degisken2.PadLeft(30,'*'));
+
+            Console.WriteLine(degisken.PadRight(50, '-') +degisken2);
+            Console.WriteLine(degisken.PadRight(50, '-') +degisken2);
+
+            //Remove (Girilen indexten sonrasını siler)(İki değer girilirse; ilk değerden sonra ikinci değer kadar karakter siler.)
+            Console.WriteLine(degisken.Remove(10));
+            Console.WriteLine(degisken.Remove(10,2));
+
+            //Replace (İlk değerin yerine ikinci değeri yazar.)
+            Console.WriteLine(degisken.Replace("CSharp","C#"));
+
+            //Split (İlk girilen parametrelerden böl ve bir diziye ata, ardından iknci girilen parametrenin dizideki karşılığı olan elemanı getir.)
+            Console.WriteLine(degisken.Split(' ')[1]);
+
+            //Substring (Remove ile ters mantıkla çalışır.)
+            Console.WriteLine(degisken.Substring(4));
+            Console.WriteLine(degisken.Substring(10,5));
+
+
+        }
+    }
+}
